@@ -29,6 +29,7 @@
     "lodash.template": "^4.2.5",
     "minimist": "^1.2.0",
     "mkdirp": "^0.5.1",
-    "roar": "github:mklabs/roar"
+    "roar": "github:mklabs/roar",
+    "through2": "^2.0.1"
   }
 }
