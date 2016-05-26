@@ -5,7 +5,8 @@
   "main": "index.js",
   "bin": "bin/hcp",
   "scripts": {
-    "test": "bake test"
+    "pretest": "bake babel eslint clean",
+    "test": "mocha -R spec"
   },
   "devDependencies": {
     "babel-cli": "^6.9.0",
@@ -27,6 +28,7 @@
     "glob": "^7.0.3",
     "lodash.template": "^4.2.5",
     "minimist": "^1.2.0",
-    "mkdirp": "^0.5.1"
+    "mkdirp": "^0.5.1",
+    "roar": "github:mklabs/roar"
   }
 }
