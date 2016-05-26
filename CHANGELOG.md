@@ -14,3 +14,4 @@ All notable changes to this project will be documented in this file. See [standa
 ### Features
 
 * have templates parsed, prompt for undefined vars ([b42c565](https://github.com/mklabs/handlebars-copy/commit/b42c565))
+* JSON merge ([d8f7a50](https://github.com/mklabs/handlebars-copy/commit/d8f7a50))
