@@ -2,7 +2,7 @@
 all: watch
 
 clean:
-	rm -rf test/output
+	rm -rf test/output.json test/output
 
 test-cmd: clean
 	hcp test/examples/* test/output/ -d
@@ -10,14 +10,14 @@ test-cmd: clean
 babel:
 	babel lib/ -d src/
 
-test: babel eslint
+test: babel eslint clean
 	mocha -R spec
 
 eslint:
 	DEBUG="eslint:cli-engine" eslint .
 
 watch:
-	watchd *.* lib/* bin/* test/* -c 'bake test'
+	watchd *.* lib/* bin/* test/hcp.js -c 'bake test'
 
 release: version push publish
 
