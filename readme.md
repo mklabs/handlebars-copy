@@ -4,6 +4,8 @@
 
     npm install hcp
 
+> wip
+
 ## Usage
 
 hcp is a CLI tool similar to the `cp` command.
