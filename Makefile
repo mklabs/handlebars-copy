@@ -20,13 +20,13 @@ eslint:
 watch:
 	watchd *.* lib/* bin/* test/hcp.js -c 'bake test'
 
-release: version push publish
-
 version:
 	standard-version -m '%s'
 
-push:
+push: test
 	git push origin master --tags
 
-publish:
+publish: push
 	npm publish
+
+release: version publish
