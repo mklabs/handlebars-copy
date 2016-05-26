@@ -4,7 +4,9 @@
 
     npm install hcp
 
-> wip [![Build Status](https://travis-ci.org/mklabs/handlebars-copy.svg?branch=master)](https://travis-ci.org/mklabs/handlebars-copy)
+[![Build Status](https://travis-ci.org/mklabs/handlebars-copy.svg?branch=master)](https://travis-ci.org/mklabs/handlebars-copy)
+
+> wip
 
 ## Usage
 

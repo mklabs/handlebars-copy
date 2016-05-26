@@ -10,11 +10,10 @@ test-cmd: clean
 babel:
 	babel lib/ -d src/
 
-test: babel
+test: babel eslint
 	mocha -R spec
 
 eslint:
-	echo $PATH
 	DEBUG="eslint:cli-engine" eslint .
 
 watch:

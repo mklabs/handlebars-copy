@@ -1,0 +1,4 @@
+.tern-port
+node_modules/
+src
+test/output/
