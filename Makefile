@@ -1,8 +1,11 @@
 
-all: help
+all: watch
 
-help:
-	echo help
+clean:
+	rm -rf test/output
+
+test-cmd: clean
+	hcp test/examples/* test/output/ -d
 
 babel:
 	babel lib/ -d src/
@@ -11,10 +14,11 @@ test: babel
 	mocha -R spec
 
 eslint:
+	echo $PATH
 	DEBUG="eslint:cli-engine" eslint .
 
 watch:
-	watchd -c 'bake test'
+	watchd *.* lib/* bin/* test/* -c 'bake test'
 
 release: version push publish
 
