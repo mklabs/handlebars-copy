@@ -29,4 +29,7 @@ push: test
 publish: push
 	npm publish
 
+docs:
+	mocha -R markdown >> readme.md
+
 release: version publish
