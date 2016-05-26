@@ -1,6 +1,6 @@
 {
   "name": "hcp",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Like cp, but with Handlebars template",
   "main": "index.js",
   "bin": "bin/hcp",
