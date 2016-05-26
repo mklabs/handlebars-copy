@@ -18,10 +18,10 @@ template placeholder `{{ ... }}`.
 Handlebars template are executed in the context of the following object:
 
 ```js
-Object.assign({}, env, config, opts)
+Object.assign({}, env, opts)
 ```
 
-wher `env`, `config` and `opts` have the following structure:
+where `env` and `opts` have the following structure:
 
 ```js
 {
@@ -29,10 +29,6 @@ wher `env`, `config` and `opts` have the following structure:
     PATH: '...',
     ...
   },
-
-  config: {
-    name: 'Default name'
-  }
 
   opts: {
     debug: true,
@@ -46,7 +42,6 @@ The templates context is a merged version of all possible data, with the
 following order of precedence:
 
 - opts    - Command line flags as parsed by minimist
-- config  - Additionnal data coming from package.json "hcp" field
 - env     - Copy of `process.env`
 
 ## Prompts

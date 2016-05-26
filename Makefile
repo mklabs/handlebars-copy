@@ -4,8 +4,9 @@ all: watch
 clean:
 	rm -rf test/output.json test/output
 
-test-cmd: clean
-	hcp test/examples/* test/output/ -d
+test-cmd: clean babel
+	hcp test/examples/tpl.hbs test/output/ --name foo --description foo -d
+	cat test/output/tpl.hbs
 
 babel:
 	babel lib/ -d src/

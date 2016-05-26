@@ -1,34 +1,38 @@
 
 const fs       = require('fs');
 const path     = require('path');
-const test     = require('gentle-cli');
+const cli      = require('gentle-cli');
 const { join } = require('path');
 const assert   = require('assert');
 
 describe('hcp', () => {
   let hcp = (cmd) => {
     let binpath = join(__dirname, '../bin/hcp');
-    return test().use(`node ${binpath} ${cmd}`);
+    return cli().use(`node ${binpath} ${cmd}`);
   };
 
-  describe('cli', () => {
-    it('hcp test/examples/* test/output/', (done) => {
-      hcp('test/examples/* test/output.json')
-        .expect(0, (err) => {
-          if (err) return done(err);
-
-          assert.deepEqual(require('./output.json'), {
-            name: 'input',
-            description: '',
-            foo: 'bar'
-          });
-
+  let test = (cmd, next) => {
+    it(`hcp ${cmd}`, (done) => {
+      hcp(cmd)
+        .expect('foo')
+        .expect(0, () => {
+          next();
           done();
         });
     });
+  };
 
-    it('hcp test/examples/* test/existing.json', (done) => {
-      hcp('test/examples/* test/existing.json')
+  describe('cli', () => {
+    test('test/examples/package.json test/output.json', () => {
+      assert.deepEqual(require('./output.json'), {
+        name: 'input',
+        description: '',
+        foo: 'bar'
+      });
+    });
+
+    it('hcp test/examples/package.json test/existing.json', (done) => {
+      hcp('test/examples/package.json test/existing.json')
         .expect(0, (err) => {
           if (err) return done(err);
 
