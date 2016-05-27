@@ -30,6 +30,7 @@
     "minimist": "^1.2.0",
     "mkdirp": "^0.5.1",
     "roar": "github:mklabs/roar",
+    "template-copy": "^1.1.0",
     "through2": "^2.0.1"
   }
 }
