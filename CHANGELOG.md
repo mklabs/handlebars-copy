@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.3.1"></a>
+## [0.3.1](https://github.com/mklabs/handlebars-copy/compare/v0.3.0...v0.3.1) (2016-05-27)
+
+
+### Bug Fixes
+
+* reference to template-copy ([1884763](https://github.com/mklabs/handlebars-copy/commit/1884763))
+
+
+
 <a name="0.3.0"></a>
 # [0.3.0](https://github.com/mklabs/handlebars-copy/compare/v0.2.3...v0.3.0) (2016-05-27)
 
